@@ -1,0 +1,7 @@
+Test,Result,Details
+Load Page,Loaded,https://news.ycombinator.com/newest
+Load Page,Loaded,https://news.ycombinator.com/ask
+Load Page,Loaded,https://news.ycombinator.com/show
+Continuous Navigation,Navigated,https://news.ycombinator.com/newest
+Continuous Navigation,Navigated,https://news.ycombinator.com/ask
+Continuous Navigation,Navigated,https://news.ycombinator.com/show

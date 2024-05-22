@@ -1,0 +1,2 @@
+Test,Query,Results,URL,Result
+Search Functionality,JavaScript,Visible,https://hn.algolia.com/?q=JavaScript,Passed
