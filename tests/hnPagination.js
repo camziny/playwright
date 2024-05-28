@@ -12,7 +12,7 @@ await expect(page.locator("span.rank").first()).toContainText(
 );
 
 // click on the "more" button to render 30 more articles
-await page.locator(`:text("More")`).click();
+await page.getByRole("link", { name: "More" }).click();
 const thirtyFirstArticle = await page
   .locator("span.rank")
   .first()
