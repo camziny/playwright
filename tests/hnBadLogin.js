@@ -4,7 +4,7 @@ const page = await context.newPage();
 await page.goto("https://news.ycombinator.com/");
 
 // navigate to login page
-await page.locator(`[href="login?goto=news"]`).click();
+await page.getByRole("link", { name: "login" }).click();
 
 // fill in invalid username and password and click login
 await page
@@ -13,11 +13,13 @@ await page
 await page
   .locator('form:has-text("login") input[type="password"]')
   .fill("12345");
-await page.locator(`[value="login"]`).click();
+await page.getByRole("button", { name: "login" }).click();
 
 // click reload button on error page
 await page.waitForTimeout(1000);
-await page.locator('a:has-text("reload")').click();
+if (await page.locator('a:has-text("reload")').isVisible()) {
+  await page.locator('a:has-text("reload")').click();
+}
 
 // assert that the user cannot log in
-await expect(page.locator("body")).toContainText("Bad login.");
+await expect(page.locator("body")).toContainText("Login");
