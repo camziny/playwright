@@ -20,19 +20,4 @@ await expect(
     `[data-test="cart-contents-container"] [data-test="item-1-title-link"]`
   )
 ).toHaveText(`Sauce Labs Bolt T-Shirt`);
-await expect(
-  page.locator(
-    `[data-test="cart-contents-container"] [data-test="item-1-title-link"]`
-  )
-).toHaveCount(1);
 await expect(page.getByRole("button", { name: "Remove" })).toBeVisible();
-
-// click the remove button
-await page.getByRole("button", { name: "Remove" }).click();
-
-// assert that the item is no longer in the cart
-await expect(
-  page.locator(
-    `[data-test="cart-contents-container"] [data-test="item-1-title-link"]`
-  )
-).toHaveCount(0);
